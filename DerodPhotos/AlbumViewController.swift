@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AlbumViewController.swift
 //  DerodPhotos
 //
 //  Created by Googoo on 9/11/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AlbumViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

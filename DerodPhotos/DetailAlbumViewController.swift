@@ -8,7 +8,9 @@
 
 import UIKit
 
-class DetailAlbumViewController: UIViewController {
+class DetailAlbumViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    @IBOutlet weak var detailAlbumCollectionView: UICollectionView!
     
     private(set) public var albumImages = [AlbumImage]()
 
@@ -16,6 +18,9 @@ class DetailAlbumViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        detailAlbumCollectionView.dataSource = self
+        detailAlbumCollectionView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,8 +30,22 @@ class DetailAlbumViewController: UIViewController {
     
     func initAlbums(album: Album) {
         albumImages = DataService.instance.getAlbumImages()
+        navigationItem.title = album.title
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return albumImages.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlbumImageCell", for: indexPath) as? AlbumImageCell {
+            
+            let albumImage = albumImages[indexPath.row]
+            cell.updateViews(albumImage: albumImage)
+            return cell
+        }
+        return AlbumImageCell()
+    }
 
     /*
     // MARK: - Navigation

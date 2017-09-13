@@ -50,7 +50,13 @@ class AlbumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detailAlbumVC = segue.destination as? DetailAlbumViewController {
+            let barButton = UIBarButtonItem()
+            barButton.title = ""
+            navigationItem.backBarButtonItem = barButton
+            
+            assert(sender as? Album != nil)
             detailAlbumVC.initAlbums(album: sender as! Album)
+
         }
     }
 }

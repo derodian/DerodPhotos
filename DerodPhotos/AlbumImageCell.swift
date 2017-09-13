@@ -12,4 +12,8 @@ class AlbumImageCell: UICollectionViewCell {
     
     @IBOutlet weak var albumImageView: UIImageView!
     
+    func updateViews(albumImage: AlbumImage) {
+        albumImageView.image = UIImage(named: albumImage.imageName)
+    }
+    
 }

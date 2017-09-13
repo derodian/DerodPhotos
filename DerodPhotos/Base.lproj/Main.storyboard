@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="972" y="38.23088455772114"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Album View Controller-->
         <scene sceneID="UOZ-Yr-JQa">
             <objects>
-                <viewController id="Px4-xE-HKu" sceneMemberID="viewController">
+                <viewController id="Px4-xE-HKu" customClass="DetailAlbumViewController" customModule="DerodPhotos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MJh-CE-nAE"/>
                         <viewControllerLayoutGuide type="bottom" id="vDJ-xE-1QV"/>
@@ -109,7 +109,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6ge-dW-ipz" customClass="AlbumImageCell" customModule="DerodPhotos" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumImageCell" id="6ge-dW-ipz" customClass="AlbumImageCell" customModule="DerodPhotos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="112" height="112"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -142,6 +142,9 @@
                             <constraint firstItem="vDJ-xE-1QV" firstAttribute="top" secondItem="uKY-ka-nWp" secondAttribute="bottom" id="tTj-2f-gs2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="detailAlbumCollectionView" destination="uKY-ka-nWp" id="pvc-le-YJF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HV0-XR-vD2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
